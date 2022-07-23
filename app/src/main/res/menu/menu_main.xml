@@ -3,15 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/mode_list"
+        android:id="@+id/list_mode"
         android:title="@string/list"
         app:showAsAction="never" />
     <item
-        android:id="@+id/mode_grid"
+        android:id="@+id/grid_mode"
         android:title="@string/grid"
         app:showAsAction="never" />
     <item
-        android:id="@+id/mode_cardview"
+        android:id="@+id/cardview_mode"
         android:title="@string/cardview"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:title="@string/about"
         app:showAsAction="never" />
 </menu>

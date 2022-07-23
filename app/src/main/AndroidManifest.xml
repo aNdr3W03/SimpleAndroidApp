@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailNuclearActivity" />
+        <activity android:name=".About" />
     </application>
 
 </manifest>

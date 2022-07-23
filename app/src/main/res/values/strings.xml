@@ -19,4 +19,9 @@
     <string name="construction_received">Construction Received</string>
     <string name="capacity_received">Capacity Received</string>
     <string name="unit_received">Unit Received</string>
+    <string name="about">About</string>
+    <string name="myName">Andrew Benedictus Jamesie</string>
+    <string name="myEmail">andrewbjamesie@yahoo.com</string>
+    <string name="myLinkedIn">LinkedIn</string>
+    <string name="myGitHub">GitHub</string>
 </resources>

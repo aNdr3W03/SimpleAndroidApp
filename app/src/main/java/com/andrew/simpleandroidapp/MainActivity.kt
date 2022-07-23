@@ -1,5 +1,6 @@
 package com.andrew.simpleandroidapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -76,19 +77,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
-            R.id.mode_list -> {
+            R.id.list_mode -> {
                 title = "Nuclear Power Plant"
                 showRecyclerList()
             }
 
-            R.id.mode_grid -> {
+            R.id.grid_mode -> {
                 title = "Nuclear Power Plant (Picture)"
                 showRecyclerGrid()
             }
 
-            R.id.mode_cardview -> {
+            R.id.cardview_mode -> {
                 title = "Nuclear Power Plant (Detail)"
                 showRecyclerCardView()
+            }
+
+            R.id.about -> {
+                val aboutIntent = Intent(this@MainActivity, About::class.java)
+                startActivity(aboutIntent)
             }
         }
         setActionBarTitle(title)
