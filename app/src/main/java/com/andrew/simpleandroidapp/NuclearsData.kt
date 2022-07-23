@@ -69,6 +69,23 @@ object NuclearsData {
         "1968-05-18"
     )
 
+    private val nuclearDecommission = arrayOf(
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "2011-03-11",
+        "2000-12-15",
+        "2019-09-20",
+        "1974-08-25"
+    )
+
     private val nuclearCapacity = arrayOf(
         "7965 MW",
         "7489 MW",
@@ -129,6 +146,7 @@ object NuclearsData {
                 nuclear.detail       = nuclearDetails[position]
                 nuclear.country      = nuclearCountry[position]
                 nuclear.construction = nuclearConstruction[position]
+                nuclear.decommission = nuclearDecommission[position]
                 nuclear.capacity     = nuclearCapacity[position]
                 nuclear.unit         = nuclearUnit[position]
                 nuclear.photo        = nuclearsImages[position]

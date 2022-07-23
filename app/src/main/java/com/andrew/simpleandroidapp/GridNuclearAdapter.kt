@@ -46,6 +46,7 @@ class GridNuclearAdapter(val listNuclear: ArrayList<Nuclear>) : RecyclerView.Ada
                 putExtra(DetailNuclearActivity.EXTRA_IMAGE,        nuclear.photo)
                 putExtra(DetailNuclearActivity.EXTRA_COUNTRY,      nuclear.country)
                 putExtra(DetailNuclearActivity.EXTRA_CONSTRUCTION, nuclear.construction)
+                putExtra(DetailNuclearActivity.EXTRA_DECOMMISSION, nuclear.decommission)
                 putExtra(DetailNuclearActivity.EXTRA_CAPACITY,     nuclear.capacity)
                 putExtra(DetailNuclearActivity.EXTRA_UNIT,         nuclear.unit)
             }
