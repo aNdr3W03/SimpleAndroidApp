@@ -9,6 +9,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class GridNuclearAdapter(val listNuclear: ArrayList<Nuclear>) : RecyclerView.Adapter<GridNuclearAdapter.GridViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     inner class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
     }
@@ -23,9 +29,15 @@ class GridNuclearAdapter(val listNuclear: ArrayList<Nuclear>) : RecyclerView.Ada
             .load(listNuclear[position].photo)
             .apply(RequestOptions().override(350, 550))
             .into(holder.imgPhoto)
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
         return listNuclear.size
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Nuclear)
     }
 }

@@ -26,15 +26,15 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
     }
 
     override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
-        val hero = listNuclear[position]
+        val nuclear = listNuclear[position]
 
         Glide.with(holder.itemView.context)
-            .load(hero.photo)
+            .load(nuclear.photo)
             .apply(RequestOptions().override(350, 550))
             .into(holder.imgPhoto)
 
-        holder.tvName.text = hero.name
-        holder.tvDetail.text = hero.detail
+        holder.tvName.text = nuclear.name
+        holder.tvDetail.text = nuclear.detail
 
         holder.btnFavorite.setOnClickListener {
             Toast.makeText(holder.itemView.context, "Favorite " + listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
@@ -45,7 +45,7 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
         }
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Kamu memilih " + listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(holder.itemView.context, listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
         }
     }
 

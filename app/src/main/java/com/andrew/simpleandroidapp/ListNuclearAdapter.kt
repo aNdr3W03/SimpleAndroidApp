@@ -10,6 +10,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : RecyclerView.Adapter<ListNuclearAdapter.ListViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName:   TextView  = itemView.findViewById(R.id.tv_item_name)
         var tvDetail: TextView  = itemView.findViewById(R.id.tv_item_detail)
@@ -31,9 +37,15 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
 
         holder.tvName.text   = nuclear.name
         holder.tvDetail.text = nuclear.detail
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
         return listNuclear.size
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Nuclear)
     }
 }

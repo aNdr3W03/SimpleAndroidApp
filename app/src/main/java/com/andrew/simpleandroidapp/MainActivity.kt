@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,18 +34,34 @@ class MainActivity : AppCompatActivity() {
         rvNuclears.layoutManager = LinearLayoutManager(this)
         val listNuclearAdapter = ListNuclearAdapter(list)
         rvNuclears.adapter = listNuclearAdapter
+
+        listNuclearAdapter.setOnItemClickCallback(object : ListNuclearAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Nuclear) {
+                showSelectedNuclear(data)
+            }
+        })
     }
 
     private fun showRecyclerGrid() {
         rvNuclears.layoutManager = GridLayoutManager(this, 2)
-        val gridHeroAdapter = GridNuclearAdapter(list)
-        rvNuclears.adapter = gridHeroAdapter
+        val gridNuclearAdapter = GridNuclearAdapter(list)
+        rvNuclears.adapter = gridNuclearAdapter
+
+        gridNuclearAdapter.setOnItemClickCallback(object : GridNuclearAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Nuclear) {
+                showSelectedNuclear(data)
+            }
+        })
     }
 
     private fun showRecyclerCardView() {
         rvNuclears.layoutManager = LinearLayoutManager(this)
-        val cardViewHeroAdapter = CardViewNuclearAdapter(list)
-        rvNuclears.adapter = cardViewHeroAdapter
+        val cardViewNuclearAdapter = CardViewNuclearAdapter(list)
+        rvNuclears.adapter = cardViewNuclearAdapter
+    }
+
+    private fun showSelectedNuclear(nuclear: Nuclear) {
+        Toast.makeText(this, nuclear.name, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
