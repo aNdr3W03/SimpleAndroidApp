@@ -1,5 +1,6 @@
 package com.andrew.simpleandroidapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,6 +47,17 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
 
         holder.itemView.setOnClickListener {
             Toast.makeText(holder.itemView.context, listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(holder.itemView.context, DetailNuclearActivity::class.java).apply {
+                putExtra(DetailNuclearActivity.EXTRA_NAME,         nuclear.name)
+                putExtra(DetailNuclearActivity.EXTRA_DETAIL,       nuclear.detail)
+                putExtra(DetailNuclearActivity.EXTRA_IMAGE,        nuclear.photo)
+                putExtra(DetailNuclearActivity.EXTRA_COUNTRY,      nuclear.country)
+                putExtra(DetailNuclearActivity.EXTRA_CONSTRUCTION, nuclear.construction)
+                putExtra(DetailNuclearActivity.EXTRA_CAPACITY,     nuclear.capacity)
+                putExtra(DetailNuclearActivity.EXTRA_UNIT,         nuclear.unit)
+            }
+            holder.itemView.context.startActivity(intent)
         }
     }
 
