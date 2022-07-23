@@ -26,4 +26,5 @@
     <string name="myEmail">andrewbjamesie@yahoo.com</string>
     <string name="myLinkedIn">LinkedIn</string>
     <string name="myGitHub">GitHub</string>
+    <string name="splashscreen">SplashScreen</string>
 </resources>
