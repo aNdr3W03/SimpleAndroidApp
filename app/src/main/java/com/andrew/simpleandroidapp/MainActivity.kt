@@ -11,10 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     private lateinit var rvNuclears: RecyclerView
     private var list: ArrayList<Nuclear> = arrayListOf()
+    private var title: String = "Nuclear Power Plant"
+
+    private fun setActionBarTitle(title: String) {
+        supportActionBar?.title = title
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setActionBarTitle(title)
 
         rvNuclears = findViewById(R.id.rv_nuclears)
         rvNuclears.setHasFixedSize(true)
@@ -54,16 +60,20 @@ class MainActivity : AppCompatActivity() {
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
             R.id.mode_list -> {
+                title = "Nuclear Power Plant"
                 showRecyclerList()
             }
 
             R.id.mode_grid -> {
+                title = "Nuclear Power Plant (Picture)"
                 showRecyclerGrid()
             }
 
             R.id.mode_cardview -> {
+                title = "Nuclear Power Plant (Detail)"
                 showRecyclerCardView()
             }
         }
+        setActionBarTitle(title)
     }
 }
