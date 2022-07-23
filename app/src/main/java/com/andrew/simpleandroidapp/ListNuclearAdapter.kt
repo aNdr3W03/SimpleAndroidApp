@@ -47,8 +47,9 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
             onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
 
             val intent = Intent(holder.itemView.context, DetailNuclearActivity::class.java).apply {
-                putExtra("Name", nuclear.name)
-                putExtra("Detail", nuclear.detail)
+                putExtra(DetailNuclearActivity.EXTRA_NAME,   nuclear.name)
+                putExtra(DetailNuclearActivity.EXTRA_DETAIL, nuclear.detail)
+                putExtra(DetailNuclearActivity.EXTRA_IMAGE,  nuclear.photo)
             }
             holder.itemView.context.startActivity(intent)
         }

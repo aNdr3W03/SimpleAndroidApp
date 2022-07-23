@@ -10,7 +10,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="4dp"
-    card_view:cardCornerRadius="4dp">
+    card_view:cardCornerRadius="6dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,8 +22,8 @@
             android:layout_width="150dp"
             android:layout_height="220dp"
             android:layout_marginBottom="4dp"
-            android:scaleType="centerCrop"
             android:contentDescription="@string/image"
+            android:scaleType="centerCrop"
             tools:src="@tools:sample/avatars" />
 
         <TextView
