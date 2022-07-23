@@ -22,9 +22,9 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvName:   TextView  = itemView.findViewById(R.id.tv_item_name)
-        var tvDetail: TextView  = itemView.findViewById(R.id.tv_item_detail)
-        var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
+        var tvName:         TextView  = itemView.findViewById(R.id.tv_item_name)
+        var tvDetail:       TextView  = itemView.findViewById(R.id.tv_item_detail)
+        var imgPhoto:       ImageView = itemView.findViewById(R.id.img_item_photo)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -50,6 +50,10 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
                 putExtra(DetailNuclearActivity.EXTRA_NAME,   nuclear.name)
                 putExtra(DetailNuclearActivity.EXTRA_DETAIL, nuclear.detail)
                 putExtra(DetailNuclearActivity.EXTRA_IMAGE,  nuclear.photo)
+                putExtra(DetailNuclearActivity.EXTRA_COUNTRY, nuclear.country)
+                putExtra(DetailNuclearActivity.EXTRA_CONSTRUCTION, nuclear.construction)
+                putExtra(DetailNuclearActivity.EXTRA_CAPACITY, nuclear.capacity)
+                putExtra(DetailNuclearActivity.EXTRA_UNIT, nuclear.unit)
             }
             holder.itemView.context.startActivity(intent)
         }

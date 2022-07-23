@@ -11,7 +11,8 @@ object NuclearsData {
         "Palo Verde Nuclear Power Plant",
         "Rostov Nuclear Power Plant",
         "Forsmark Nuclear Power Plant",
-        "Tihange Nuclear Power Plant")
+        "Tihange Nuclear Power Plant"
+    )
 
     private val nuclearDetails = arrayOf(
         "The Kashiwazaki-Kariwa Nuclear Power Plant (柏崎刈羽原子力発電所, Kashiwazaki-Kariwa genshiryoku-hatsudensho, Kashiwazaki-Kariwa NPP) is a large, modern (housing the world's first advanced boiling water reactor or ABWR) nuclear power plant on a 4.2-square-kilometer (1,000-acre) site including land in the towns of Kashiwazaki and Kariwa in Niigata Prefecture, Japan, on the coast of the Sea of Japan, from where it gets cooling water. The plant is owned and operated by Tokyo Electric Power Company (TEPCO). It is the largest nuclear generating station in the world by net electrical power rating.",
@@ -23,7 +24,60 @@ object NuclearsData {
         "The Palo Verde Generating Station is a nuclear power plant located near Tonopah, Arizona, in western Arizona. It is located about 45 miles (72 km) due west of downtown Phoenix, Arizona, and it is located near the Gila River, which is dry save for the rainy season in late summer.",
         "Rostov Nuclear Power Plant (Russian: Ростовская АЭС []), also known as Volgodonsk Nuclear Power Plant (Russian: Волгодонская АЭС []), is a Russian nuclear power plant located on the left bank of the Tsimlyansk reservoir in the lower stream of the Don River near Volgodonsk, Rostov Oblast. The post-Soviet Union revival of the nuclear industry of Russia took place at Rostov in the early 2000s, with the completion of the building of unit 2 in 2010, unit 3 in 2015 and unit 4 in 2017. Unit 4 was the last VVER-1000/V-320 reactor built.",
         "Forsmark Nuclear Power Plant is a nuclear power plant in Forsmark, Sweden, and also the site of the Swedish Final repository for radioactive operational waste. It is operated by a company mainly owned by Vattenfall. The radiation monitors at Forsmark were the first outside the Soviet Union to detect the elevated radiation levels resulting from the Chernobyl disaster in April 1986, over 1,000 km away, forcing the Soviet government to publicly acknowledge it after two days of them trying to cover it up.",
-        "The Tihange Nuclear Power Station is one of two nuclear energy production sites in Belgium and contains 3 nuclear power plants. The site is located on the bank of the Meuse river, near the village of Tihange in the Walloon province of Liège. The station is operated and majority-owned by vertically-integrated Belgian energy corporation Electrabel. EDF Luminus has a 50% stake in the oldest unit and a 10% stake in the two newest units. It employs 1074 workers and covers an area of 75 hectares (190 acres). The plant represents about 15% of Belgium's total electricity production capacity. Nuclear energy typically provides half of Belgium's domestically-generated electricity and is the country's lowest-cost source of power.")
+        "The Tihange Nuclear Power Station is one of two nuclear energy production sites in Belgium and contains 3 nuclear power plants. The site is located on the bank of the Meuse river, near the village of Tihange in the Walloon province of Liège. The station is operated and majority-owned by vertically-integrated Belgian energy corporation Electrabel. EDF Luminus has a 50% stake in the oldest unit and a 10% stake in the two newest units. It employs 1074 workers and covers an area of 75 hectares (190 acres). The plant represents about 15% of Belgium's total electricity production capacity. Nuclear energy typically provides half of Belgium's domestically-generated electricity and is the country's lowest-cost source of power."
+    )
+
+    private val nuclearCountry = arrayOf(
+        "Japan",
+        "South Korea",
+        "Canada",
+        "China",
+        "Ukraine",
+        "France",
+        "United States",
+        "Russia",
+        "Sweden",
+        "Belgium"
+    )
+
+    private val nuclearConstruction = arrayOf(
+        "1980-06-05",
+        "1972-08-01",
+        "1970-12-01",
+        "1999",
+        "1980-04-01",
+        "1974",
+        "1976-05-25",
+        "1977",
+        "1980",
+        "1970-06-01",
+    )
+
+    private val nuclearCapacity = arrayOf(
+        "7965 MW",
+        "7489 MW",
+        "6550 MW",
+        "6070 MW",
+        "5700 MW",
+        "5460 MW",
+        "3942 MW",
+        "3922 MW",
+        "3138 MW",
+        "3016 MW",
+    )
+
+    private val nuclearUnit = arrayOf(
+        "7 Unit",
+        "7 Unit",
+        "8 Unit",
+        "6 Unit",
+        "6 Unit",
+        "6 Unit",
+        "3 Unit",
+        "4 Unit",
+        "3 Unit",
+        "3 Unit",
+    )
 
     private val nuclearsImages = intArrayOf(
         R.drawable.kashiwazaki_kariwa,
@@ -35,16 +89,21 @@ object NuclearsData {
         R.drawable.palo_verde,
         R.drawable.rostov,
         R.drawable.forsmark,
-        R.drawable.tihange)
+        R.drawable.tihange
+    )
 
     val listData: ArrayList<Nuclear>
         get() {
             val list = arrayListOf<Nuclear>()
             for (position in nuclearNames.indices) {
                 val nuclear = Nuclear()
-                nuclear.name = nuclearNames[position]
-                nuclear.detail = nuclearDetails[position]
-                nuclear.photo = nuclearsImages[position]
+                nuclear.name         = nuclearNames[position]
+                nuclear.detail       = nuclearDetails[position]
+                nuclear.country      = nuclearCountry[position]
+                nuclear.construction = nuclearConstruction[position]
+                nuclear.capacity     = nuclearCapacity[position]
+                nuclear.unit         = nuclearUnit[position]
+                nuclear.photo        = nuclearsImages[position]
                 list.add(nuclear)
             }
             return list
