@@ -14,11 +14,11 @@ import com.bumptech.glide.request.RequestOptions
 
 class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : RecyclerView.Adapter<CardViewNuclearAdapter.CardViewViewHolder>() {
     inner class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
-        var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
-        var btnFavorite: Button = itemView.findViewById(R.id.btn_set_favorite)
-        var btnShare: Button = itemView.findViewById(R.id.btn_set_share)
+        var imgPhoto:    ImageView = itemView.findViewById(R.id.img_item_photo)
+        var tvName:      TextView  = itemView.findViewById(R.id.tv_item_name)
+        var tvDetail:    TextView  = itemView.findViewById(R.id.tv_item_detail)
+        var btnFavorite: Button    = itemView.findViewById(R.id.btn_set_favorite)
+        var btnShare:    Button    = itemView.findViewById(R.id.btn_set_share)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
@@ -43,6 +43,12 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
 
         holder.btnShare.setOnClickListener {
             Toast.makeText(holder.itemView.context, "Share " + listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, nuclear.name + "\n\n" + nuclear.detail)
+            intent.putExtra(Intent.EXTRA_SUBJECT, nuclear.name)
+            holder.itemView.context.startActivity(Intent.createChooser(intent, "Share via"))
         }
 
         holder.itemView.setOnClickListener {
