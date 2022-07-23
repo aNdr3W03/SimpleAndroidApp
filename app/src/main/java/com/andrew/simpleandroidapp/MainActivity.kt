@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         rvNuclears.adapter = gridHeroAdapter
     }
 
+    private fun showRecyclerCardView() {
+        rvNuclears.layoutManager = LinearLayoutManager(this)
+        val cardViewHeroAdapter = CardViewNuclearAdapter(list)
+        rvNuclears.adapter = cardViewHeroAdapter
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
@@ -56,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.mode_cardview -> {
-
+                showRecyclerCardView()
             }
         }
     }
