@@ -34,7 +34,7 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
             .apply(RequestOptions().override(350, 550))
             .into(holder.imgPhoto)
 
-        holder.tvName.text = nuclear.name
+        holder.tvName.text   = nuclear.name
         holder.tvDetail.text = nuclear.detail
 
         holder.btnFavorite.setOnClickListener {
@@ -42,12 +42,12 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
         }
 
         holder.btnShare.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Share " + listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(holder.itemView.context, "Share " + listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(Intent.ACTION_SEND)
-            intent.type = "text/plain"
+            val intent  = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_TEXT, nuclear.name + "\n\n" + nuclear.detail)
             intent.putExtra(Intent.EXTRA_SUBJECT, nuclear.name)
+            intent.type = "text/plain"
             holder.itemView.context.startActivity(Intent.createChooser(intent, "Share via"))
         }
 
