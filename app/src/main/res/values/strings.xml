@@ -27,4 +27,9 @@
     <string name="myLinkedIn">LinkedIn</string>
     <string name="myGitHub">GitHub</string>
     <string name="splashscreen">SplashScreen</string>
+    <string name="reference">References</string>
+    <string name="dicoding"><a href="https://www.dicoding.com/academies/51">Dicoding</a></string>
+    <string name="youtube"><a href="https://www.youtube.com">YouTube</a></string>
+    <string name="stackoverflow"><a href="https://stackoverflow.com">Stack Overflow</a></string>
+    <string name="dbpedia">Data: <a href="https://www.dbpedia.org">dbpedia.org</a></string>
 </resources>
