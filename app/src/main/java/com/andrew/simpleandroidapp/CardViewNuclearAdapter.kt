@@ -46,7 +46,7 @@ class CardViewNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recy
         }
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(holder.itemView.context, listNuclear[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(holder.itemView.context, DetailNuclearActivity::class.java).apply {
                 putExtra(DetailNuclearActivity.EXTRA_NAME,         nuclear.name)

@@ -44,7 +44,7 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
         holder.tvDetail.text = nuclear.detail
 
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
+            // onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
 
             val intent = Intent(holder.itemView.context, DetailNuclearActivity::class.java).apply {
                 putExtra(DetailNuclearActivity.EXTRA_NAME,         nuclear.name)

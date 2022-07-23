@@ -22,6 +22,9 @@ class DetailNuclearActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_nuclear)
 
+        val actionBar = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+
         val tvDetailReceived:       TextView  = findViewById(R.id.tv_detail_received)
         val tvCountryReceived:      TextView  = findViewById(R.id.tv_country_received)
         val tvConstructionReceived: TextView  = findViewById(R.id.tv_construction_received)
@@ -47,6 +50,11 @@ class DetailNuclearActivity : AppCompatActivity() {
             .apply(RequestOptions())
             .into(imgDetailReceived)
 
-        supportActionBar?.title = name
+        actionBar.title = name
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

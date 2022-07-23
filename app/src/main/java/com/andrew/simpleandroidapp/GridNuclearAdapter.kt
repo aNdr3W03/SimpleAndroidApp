@@ -38,7 +38,7 @@ class GridNuclearAdapter(val listNuclear: ArrayList<Nuclear>) : RecyclerView.Ada
             .into(holder.imgPhoto)
 
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
+            // onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
 
             val intent = Intent(holder.itemView.context, DetailNuclearActivity::class.java).apply {
                 putExtra(DetailNuclearActivity.EXTRA_NAME,         nuclear.name)
