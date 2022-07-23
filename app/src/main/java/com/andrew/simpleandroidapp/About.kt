@@ -47,4 +47,9 @@ class About : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

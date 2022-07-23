@@ -1,53 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/profile_picture" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="@string/myName" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_url_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:text="@string/myEmail" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/profile_picture" />
 
-    <Button
-        android:id="@+id/btn_url_linkedin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        android:text="@string/myLinkedIn" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="@string/myName" />
 
-    <Button
-        android:id="@+id/btn_url_github"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        android:text="@string/myGitHub" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_url_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:text="@string/myEmail" />
+
+        <Button
+            android:id="@+id/btn_url_linkedin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:text="@string/myLinkedIn" />
+
+        <Button
+            android:id="@+id/btn_url_github"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="100dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:text="@string/myGitHub" />
+    </LinearLayout>
+</ScrollView>
