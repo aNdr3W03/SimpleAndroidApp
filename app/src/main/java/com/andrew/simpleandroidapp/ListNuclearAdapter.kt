@@ -1,5 +1,6 @@
 package com.andrew.simpleandroidapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,10 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Nuclear)
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,14 +43,18 @@ class ListNuclearAdapter(private val listNuclear: ArrayList<Nuclear>) : Recycler
         holder.tvName.text   = nuclear.name
         holder.tvDetail.text = nuclear.detail
 
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition]) }
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
+
+            val intent = Intent(holder.itemView.context, DetailNuclearActivity::class.java).apply {
+                putExtra("Name", nuclear.name)
+                putExtra("Detail", nuclear.detail)
+            }
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
         return listNuclear.size
-    }
-
-    interface OnItemClickCallback {
-        fun onItemClicked(data: Nuclear)
     }
 }

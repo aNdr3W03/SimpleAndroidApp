@@ -15,6 +15,10 @@ class GridNuclearAdapter(val listNuclear: ArrayList<Nuclear>) : RecyclerView.Ada
         this.onItemClickCallback = onItemClickCallback
     }
 
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Nuclear)
+    }
+
     inner class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
     }
@@ -30,14 +34,12 @@ class GridNuclearAdapter(val listNuclear: ArrayList<Nuclear>) : RecyclerView.Ada
             .apply(RequestOptions().override(350, 550))
             .into(holder.imgPhoto)
 
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition]) }
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listNuclear[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int {
         return listNuclear.size
-    }
-
-    interface OnItemClickCallback {
-        fun onItemClicked(data: Nuclear)
     }
 }
