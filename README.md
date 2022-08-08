@@ -1,6 +1,6 @@
 # SimpleAndroidApp
 
-This Android application is an assignment submission for the final project of the Learn to Make Android Apps for Beginners ([Belajar Membuat Aplikasi Android untuk Pemula](https://www.dicoding.com/academies/51 "Belajar Membuat Aplikasi Android untuk Pemula - Dicoding")) class on the [Android Learning Path](https://www.dicoding.com/learningpaths/7 "Android Learning Path at Dicoding Indonesia") at [Dicoding Indonesia](https://www.dicoding.com "Dicoding Indonesia").
+This Android application is an assignment submission for the final project of the Learn to Make Android Apps for Beginners ([Belajar Membuat Aplikasi Android untuk Pemula](https://www.dicoding.com/academies/51 "Belajar Membuat Aplikasi Android untuk Pemula - Dicoding")) class on the [Android Developer Learning Path](https://www.dicoding.com/learningpaths/7 "Android Developer Learning Path at Dicoding Indonesia") at [Dicoding Indonesia](https://www.dicoding.com "Dicoding Indonesia").
 
 ## Download APK
 
